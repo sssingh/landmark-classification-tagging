@@ -1,0 +1,6 @@
+pandas
+pytorch
+torchvision
+plotly
+gradio
+huggingface_hub

@@ -1,0 +1,35 @@
+.gradio-container {
+  background-color: #262f51;
+}
+
+.submit-button {
+  background-color: orange !important;
+}
+
+.clear-button {
+  background-color: #6b6c71 !important;
+}
+
+.json-box {
+  background-color: #3e4a6f !important;
+}
+
+.image-picker {
+  background-color: #3e4a6f !important;
+}
+
+.slider {
+  background-color: #3e4a6f !important;
+}
+
+.accordion {
+  background-color: #3e4a6f !important;
+}
+
+#examples {
+  background-color: #3e4a6f !important;
+}
+
+.plot {
+  background-color: #3e4a6f !important;
+}
