@@ -10,7 +10,7 @@ pinned: false
 license: mit
 ---
 
-<a href="https://huggingface.co/spaces/sssingh/famous-landmarks-classifier-cnn"  target="_blank"><img src="https://img.shields.io/badge/click_here_to_open_demo_app-orange?style=for-the-badge&logo=dependabot"/></a>
+<a href="https://huggingface.co/spaces/sssingh/famous-landmarks-classifier-cnn"  target="_blank"><img src="https://img.shields.io/badge/click_here_to_open_gradio_app-orange?style=for-the-badge&logo=dependabot"/></a>
 
 
 # Landmarks Classification and Tagging using CNN
@@ -188,7 +188,7 @@ As we can see, the model built using transfer learning has outperformed the mode
 ### Open the LIVE app
 
 App has been deployed on `Hugging Face Spaces`.  <br>   
-<a href="https://huggingface.co/spaces/sssingh/famous-landmarks-classifier-cnn"  target="_blank"><img src="https://img.shields.io/badge/click_here_to_open_demo_app-orange?style=for-the-badge&logo=dependabot"/></a>   
+<a href="https://huggingface.co/spaces/sssingh/famous-landmarks-classifier-cnn"  target="_blank"><img src="https://img.shields.io/badge/click_here_to_open_gradio_app-orange?style=for-the-badge&logo=dependabot"/></a>   
 
 ### Training and Testing using jupyter notebook
 1. Ensure the below-listed packages are installed
