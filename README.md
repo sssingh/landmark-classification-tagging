@@ -10,13 +10,13 @@ pinned: false
 license: mit
 ---
 
-<a href="https://tv-script-generation-rnn-sssingh.streamlit.app/"  target="_blank"><img src="https://img.shields.io/badge/click_here_to_open_demo_app-orange?style=for-the-badge&logo=dependabot"/></a>
+<a href="https://huggingface.co/spaces/sssingh/famous-landmarks-classifier-cnn"  target="_blank"><img src="https://img.shields.io/badge/click_here_to_open_demo_app-orange?style=for-the-badge&logo=dependabot"/></a>
 
 
 # Landmarks Classification and Tagging using CNN
 In this project we solve a `multi-label-classification` problem by classifying/tagging a given image of a famous landmark using CNN (Convolutional Neural Network).
 
-<img src="https://github.com/sssingh/landmark-classification-tagging/blob/master/assets/title_image_sydney_opera_house.jpg?raw=true" width="800" height="300" />
+<img src="https://github.com/sssingh/landmark-classification-tagging/blob/main/assets/title_image_sydney_opera_house.jpg?raw=true" width="800" height="300" />
 
 ## Features
 ⚡Multi Label Image Classification  
@@ -38,7 +38,7 @@ In this project we solve a `multi-label-classification` problem by classifying/t
 
 ## Introduction
 
-<img src="https://github.com/sssingh/landmark-classification-tagging/blob/master/assets/app-screenshot.png?raw=true">
+<img src="https://github.com/sssingh/landmark-classification-tagging/blob/main/assets/app-screenshot.png?raw=true">
 
 Photo sharing and photo storage services like to have location data for each uploaded photo. In addition, these services can build advanced features with the location data, such as the automatic suggestion of relevant tags or automatic photo organization, which help provide a compelling user experience. However, although a photo's location can often be obtained by looking at the photo's metadata, many images uploaded to these services will not have location metadata available. This can happen when, for example, the camera capturing the picture does not have GPS or if a photo's metadata is scrubbed due to privacy concerns.
 
@@ -54,7 +54,7 @@ To build NN based model that'd accept any user-supplied image as input and sugge
     - Here, we aim to attain a test accuracy of at least 60%, which is pretty good given the complex nature of this task.
 4. Implement an inference function that will accept a file path to an image and an integer k and then predict the top k most likely landmarks this image belongs to. The print below displays the expected sample output from the predict function, indicating the top 3 (k = 3) possibilities for the image in question.
 
-<img src="https://github.com/sssingh/landmark-classification-tagging/blob/master/assets/sample_output.png?raw=true">
+<img src="https://github.com/sssingh/landmark-classification-tagging/blob/main/assets/sample_output.png?raw=true">
 
 ## Dataset
 - Dataset to be downloaded from [here](https://udacity-dlnfd.s3-us-west-1.amazonaws.com/datasets/landmark_images.zip). Note that this is a mini dataset containing around 6,000 images); this dataset is a small subset of the [Original Landmark Dataset](https://github.com/cvdfoundation/google-landmark) that has over 700,000 images.
@@ -65,18 +65,18 @@ To build NN based model that'd accept any user-supplied image as input and sugge
 - Images in the dataset are of different sizes and resolution
 - Here are a few samples from the training dataset with their respective labels descriptions...
 
-<img src="https://github.com/sssingh/landmark-classification-tagging/blob/master/assets/landmark_samples.png?raw=true">
+<img src="https://github.com/sssingh/landmark-classification-tagging/blob/main/assets/landmark_samples.png?raw=true">
 
 ## Evaluation Criteria
 
 ### Loss Function  
 We will use `LogSoftmax` in the output layer of the network...
 
-<img src="https://github.com/sssingh/landmark-classification-tagging/blob/master/assets/LogSoftmax.png?raw=true">
+<img src="https://github.com/sssingh/landmark-classification-tagging/blob/main/assets/LogSoftmax.png?raw=true">
 
 We need a suitable loss function that consumes these `log-probabilities` outputs and produces a total loss. The function that we are looking for is `NLLLoss` (Negative Log-Likelihood Loss). In practice, `NLLLoss` is nothing but a generalization of `BCELoss` (Binary Cross EntropyLoss or Log Loss) extended from binary-class to multi-class problem.
 
-<img src="https://github.com/sssingh/landmark-classification-tagging/blob/master/assets/NLLLoss.png?raw=true">
+<img src="https://github.com/sssingh/landmark-classification-tagging/blob/main/assets/NLLLoss.png?raw=true">
 
 <br>Note the `negative` sign in front `NLLLoss` formula hence negative in the name. The negative sign is put in front to make the average loss positive. Suppose we don't do this then since the `log` of a number less than 1 is negative. In that case, we will have a negative overall average loss. To reduce the loss, we need to `maximize` the loss function instead of `minimizing,` which is a much easier task mathematically than `maximizing.`
 
@@ -85,7 +85,7 @@ We need a suitable loss function that consumes these `log-probabilities` outputs
 
 `accuracy` is used as the model's performance metric on the test-set 
 
-<img src="https://github.com/sssingh/landmark-classification-tagging/blob/master/assets/accuracy.png?raw=true">
+<img src="https://github.com/sssingh/landmark-classification-tagging/blob/main/assets/accuracy.png?raw=true">
 
 
 ## Solution Approach
@@ -94,11 +94,11 @@ We need a suitable loss function that consumes these `log-probabilities` outputs
 `mean` and `standard deviation` is computed for the train dataset, and then the dataset is `normalized` using the calculated statistics. 
 - The RGB channel histogram of the train set is shown below...
 
-<img src="https://github.com/sssingh/landmark-classification-tagging/blob/master/assets/train_hist1.png?raw=true">
+<img src="https://github.com/sssingh/landmark-classification-tagging/blob/main/assets/train_hist1.png?raw=true">
 
 - The RGB channel histogram of the train set after normalization is shown below...
 
-<img src="https://github.com/sssingh/landmark-classification-tagging/blob/master/assets/train_hist2.png?raw=true">
+<img src="https://github.com/sssingh/landmark-classification-tagging/blob/main/assets/train_hist2.png?raw=true">
 
 - Now, `test` and `val` Dataset objects are prepared in the same fashion where images are resized to 128x128 and then normalized.
 - The training, validation, and testing datasets are then wrapped in Pytorch `DataLoader` object so that we can iterate through them with ease. A typical `batch_size` 32 is used.
@@ -113,22 +113,22 @@ We need a suitable loss function that consumes these `log-probabilities` outputs
     - `ReLU` is used as an activation function, and `BatchNorm` is used after every layer except the last.
     - Final model architecture (from scratch) is shown below...
     
-<img src="https://github.com/sssingh/landmark-classification-tagging/blob/master/assets/scratch_network.png?raw=true">    
+<img src="https://github.com/sssingh/landmark-classification-tagging/blob/main/assets/scratch_network.png?raw=true">    
 
 - Network initial weights are initialized by numbers drawn from a `normal-distribution in the range... 
 
-<img src="https://github.com/sssingh/landmark-classification-tagging/blob/master/assets/sqrt_n_inputs.png?raw=true">
+<img src="https://github.com/sssingh/landmark-classification-tagging/blob/main/assets/sqrt_n_inputs.png?raw=true">
 
 - Network is then trained and validated for 15 epochs using the `NLLLoss` function and `Adam` optimizer with a learning rate of 0.001. We save the trained model here as `ignore.pt` (ignore because we are not using it for evaluation)
 - We keep track of training and validation losses. When plotted, we observe that the model starts to `overfit` very quickly.
 
-<img src="https://github.com/sssingh/landmark-classification-tagging/blob/master/assets/loss1.png?raw=true">
+<img src="https://github.com/sssingh/landmark-classification-tagging/blob/main/assets/loss1.png?raw=true">
 
 - Now, we reset the Network initial weights to Pytorch default weight to check if there are any improvements 
 - Network is then again trained and validated for 15 epochs using the `NLLLoss` function and `Adam` optimizer with a learning rate of 0.001. We save the trained model here as `model_scratch.pt` (we will use this saved model for evaluation)
 - We keep track of training and validation losses. When plotted, we observe that result is almost the same as that of custom weight initialization
 
-<img src="https://github.com/sssingh/landmark-classification-tagging/blob/master/assets/loss2.png?raw=true">
+<img src="https://github.com/sssingh/landmark-classification-tagging/blob/main/assets/loss2.png?raw=true">
 
 - The trained network (`model_scratch.pt`) is then loaded and evaluated on unseen 1,250 testing images.
 The network can achieve around `38%` accuracy, which is more than we aimed for (i.e., 30%). Furthermore, the network can classify `475` images out of the total `1250` test images.
@@ -142,12 +142,12 @@ The network can achieve around `38%` accuracy, which is more than we aimed for (
     The original classifier layer in VGG19 is replaced by a `custom-classifier` with learnable weights.
     - Final model architecture (transfer learning) is shown below...
     
-<img src="https://github.com/sssingh/landmark-classification-tagging/blob/master/assets/transfer_network.png?raw=true">    
+<img src="https://github.com/sssingh/landmark-classification-tagging/blob/main/assets/transfer_network.png?raw=true">    
 
 - Network is then trained and validated for ten epochs using the `NLLLoss` function and `Adam` optimizer with a learning rate of 0.001. Note that the optimizer has been supplied with the learnable parameters of `custom-classifier` only and not the whole model. This is because we want to optimize our custom-classifier weights only and use ImageNet learned weights for the rest of the layers.
 - We keep track of training and validation losses and plot them. 
 
-<img src="https://github.com/sssingh/landmark-classification-tagging/blob/master/assets/loss3.png?raw=true">
+<img src="https://github.com/sssingh/landmark-classification-tagging/blob/main/assets/loss3.png?raw=true">
 
 - The trained network is saved as `model_transfer.pt` 
 
@@ -180,7 +180,7 @@ As we can see, the model built using transfer learning has outperformed the mode
     >>> suggest_locations('assets/Eiffel-tower_night.jpg')
 ```
 
-<img src="https://github.com/sssingh/landmark-classification-tagging/blob/master/assets/eiffel_tower_prediction.png?raw=true">
+<img src="https://github.com/sssingh/landmark-classification-tagging/blob/main/assets/eiffel_tower_prediction.png?raw=true">
     
 
 ## How To Use 
@@ -188,7 +188,7 @@ As we can see, the model built using transfer learning has outperformed the mode
 ### Open the LIVE app
 
 App has been deployed on `Hugging Face Spaces`.  <br>   
-<a href="https://gradio.app/"  target="_blank"><img src="https://img.shields.io/badge/click_here_to_open_demo_app-orange?style=for-the-badge&logo=dependabot"/></a>   
+<a href="https://huggingface.co/spaces/sssingh/famous-landmarks-classifier-cnn"  target="_blank"><img src="https://img.shields.io/badge/click_here_to_open_demo_app-orange?style=for-the-badge&logo=dependabot"/></a>   
 
 ### Training and Testing using jupyter notebook
 1. Ensure the below-listed packages are installed
