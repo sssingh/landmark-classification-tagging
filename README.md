@@ -1,8 +1,8 @@
 ---
 title: Famous Landmarks Classifier Cnn
 emoji: 🌉
-colorFrom: blue
-colorTo: red
+colorFrom: red
+colorTo: yellow
 sdk: gradio
 sdk_version: 3.45.2
 app_file: app.py
