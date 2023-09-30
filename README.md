@@ -10,7 +10,7 @@ pinned: false
 license: mit
 ---
 
-<a href="https://huggingface.co/spaces/sssingh/famous-landmarks-classifier-cnn"  target="_blank"><img src="https://img.shields.io/badge/click_here_to_open_gradio_app-orange?style=for-the-badge&logo=dependabot"/></a>
+<a href="https://huggingface.co/spaces/sssingh/famous-landmarks-classifier-cnn" target="_blank" rel=”noreferrer”><img src="https://img.shields.io/badge/click_here_to_open_gradio_app-orange?style=for-the-badge&logo=dependabot"/></a>
 
 
 # Landmarks Classification and Tagging using CNN
