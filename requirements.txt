@@ -1,6 +1,5 @@
 pandas
-pytorch
+torch
 torchvision
 plotly
-gradio
 huggingface_hub
