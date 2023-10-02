@@ -73,6 +73,7 @@ def create_interface():
                     inputs=[img, k],
                     outputs=[landmarks, proba],
                     elem_id="examples",
+                    cache_examples=True,
                 )
         submit_btn.click(
             fn=model.predict, inputs=[img, k], outputs=[landmarks, proba, plot]
