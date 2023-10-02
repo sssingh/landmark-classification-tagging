@@ -22,6 +22,8 @@ def create_interface():
        **Please note that the model is trained on a small set of only 4,000 images hence it may not** 
        **be right all the time, but its fun to try out.**  
        Visit the [project's repo](https://github.com/sssingh/landmark-classification-tagging)
+
+       ***Please be patient after clicking on example images, they are loaded from Git Large File System (LFS) and first time it may take few seconds to load***
        """
     with gr.Blocks(
         title=app_config.title, theme=app_config.theme, css=app_config.css
@@ -73,7 +75,6 @@ def create_interface():
                     inputs=[img, k],
                     outputs=[landmarks, proba],
                     elem_id="examples",
-                    cache_examples=True,
                 )
         submit_btn.click(
             fn=model.predict, inputs=[img, k], outputs=[landmarks, proba, plot]
